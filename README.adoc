@@ -1,0 +1,40 @@
+tmux-ctrlw
+==========
+
+Emulate Vim's C-w mode in tmux, making pane navigation really snazzy.
+
+.C-w Keys
+[options="header"]
+|===================================================================================
+| Keys                            | Meaning
+
+| `0`-`9`                         | Focus the numbered pane in the current window
+| `=`                             | Equalize the pane sizes
+| `h`, `j`, `k`, `l`              | Focus one pane to the left, down, up, or right
+| `p`                             | Focus the previously focused pane
+| `s`                             | Swap this pane with the pane inidicated by the next key
+| `r`                             | Focus the REPL or shell pane (`@ctrlw_repl_pane`)
+| `,`                             | Repeat last REPL or shell command by sending `C-p` `Enter`
+| `@ctrlw_key`, `.`               | Send a `@ctrlw_key` to the current pane
+| `@ctrlw_key` without modifiers footnote:[e.g. if `@ctrlw_key` is `C-x`, then just `x`] |
+   Send a `@ctrlw_key` to the current pane
+|===================================================================================
+
+.C-w Swap Keys
+[options="header"]
+|===================================================================================
+| Key     | Meaning
+
+| `0`-`9` | Swap the focused pane with the numbered pane.
+| `p`     | Swap the focused pane with the previously focused pane.
+|===================================================================================
+
+.Configuration Options
+[options="header"]
+|===================================================================================
+| Tmux Option        | Default Value    | Meaning
+
+| `@ctrlw_key`       | `C-w`            | top-level key to enter ctrlw mode
+| `@ctrlw_repl_pane` | `{bottom-right}` | which pane is considered the REPL or shell
+|===================================================================================
+

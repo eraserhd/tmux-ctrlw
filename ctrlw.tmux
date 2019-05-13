@@ -18,7 +18,6 @@ addCtrlwModeBindings() {
         tmux bind -Tctrlw $i select-pane -t $i
     done
 
-    tmux bind -Tctrlw a select-window -t 0 \; select-pane -t 0
     tmux bind -Tctrlw h select-pane -L
     tmux bind -Tctrlw j select-pane -D
     tmux bind -Tctrlw k select-pane -U
