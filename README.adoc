@@ -1,40 +1,41 @@
 tmux-ctrlw
 ==========
 
-Emulate Vim's C-w mode in tmux, making pane navigation really snazzy.
+:experimental:
 
-.C-w Keys
+Emulate Vim's `C-w` in tmux, making pane navigation really snazzy.
+
+.Keys
 [options="header"]
 |===================================================================================
-| Keys                            | Meaning
+| Keys                                         | Meaning
 
-| `0`-`9`                         | Focus the numbered pane in the current window
-| `=`                             | Equalize the pane sizes
-| `h`, `j`, `k`, `l`              | Focus one pane to the left, down, up, or right
-| `p`                             | Focus the previously focused pane
-| `s`                             | Swap this pane with the pane inidicated by the next key
-| `r`                             | Focus the REPL or shell pane (`@ctrlw_repl_pane`)
-| `,`                             | Repeat last REPL or shell command by sending `C-p` `Enter`
-| `@ctrlw_key`, `.`               | Send a `@ctrlw_key` to the current pane
-| `@ctrlw_key` without modifiers footnote:[e.g. if `@ctrlw_key` is `C-x`, then just `x`] |
-   Send a `@ctrlw_key` to the current pane
+| kbd:[@ctrlw_key] kbd:[0]-kbd:[9]             | Focus the numbered pane in the current window
+| kbd:[@ctrlw_key] kbd:[=]                     | Equalize the pane sizes
+| kbd:[@ctrlw_key] kbd:[h]                     | Focus one pane to the left
+| kbd:[@ctrlw_key] kbd:[j]                     | Focus one pane to the down
+| kbd:[@ctrlw_key] kbd:[k]                     | Focus one pane to the up
+| kbd:[@ctrlw_key] kbd:[l]                     | Focus one pane to the right
+| kbd:[@ctrlw_key] kbd:[p]                     | Focus the previously focused pane
+| kbd:[@ctrlw_key] kbd:[s] kbd:[0]-kbd:[9]     | Swap this pane with the numbered pane
+| kbd:[@ctrlw_key] kbd:[s] kbd:[p]             | Swap this pane with previously focused pane
+| kbd:[@ctrlw_key] kbd:[r]                     | Focus the REPL or shell pane (`@ctrlw_repl_pane`)
+| kbd:[@ctrlw_key] kbd:[,]                     |
+  Repeat last REPL or shell command by sending kbd:[C-p] kbd:[Enter] to `@ctrlw_repl_pane`
+  without changing focus.
+| kbd:[@ctrlw_key] kbd:[.]                     | Send kbd:[@ctrlw_key]
+| kbd:[@ctrlw_key] kbd:[@ctrlw_key]            | Send kbd:[@ctrlw_key]
+| kbd:[@ctrlw_key] unmodified-kbd:[@ctrlw_key] |
+  Send kbd:[@ctrlw_key].  e.g. if `@ctrlw_key` is set to kbd:[C-x], then kbd:[C-x] kbd:[x]
+  sends a literal kbd:[C-x] to the focused pane
 |===================================================================================
 
-.C-w Swap Keys
-[options="header"]
-|===================================================================================
-| Key     | Meaning
 
-| `0`-`9` | Swap the focused pane with the numbered pane.
-| `p`     | Swap the focused pane with the previously focused pane.
-|===================================================================================
+Configuration
+-------------
 
-.Configuration Options
-[options="header"]
-|===================================================================================
-| Tmux Option        | Default Value    | Meaning
+`@ctrlw_key` defaults to kbd:[C-w] but can be set to any other key.
 
-| `@ctrlw_key`       | `C-w`            | top-level key to enter ctrlw mode
-| `@ctrlw_repl_pane` | `{bottom-right}` | which pane is considered the REPL or shell
-|===================================================================================
+`@ctrlw_repl_pane` defaults to `{bottom-right}` but can be set to any tmux pane
+identifier.
 
