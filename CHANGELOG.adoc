@@ -1,0 +1,8 @@
+CHANGELOG
+=========
+
+:experimental:
+
+== v0.1.0
+
+* Map kbd:[|] and kbd:[-] to split panes.

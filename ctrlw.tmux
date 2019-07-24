@@ -24,6 +24,9 @@ addCtrlwModeBindings() {
     tmux bind -Tctrlw l select-pane -R
     tmux bind -Tctrlw p select-pane -t "!"
 
+    tmux bind -Tctrlw '|' split-window -h -c '#{pane_current_path}'
+    tmux bind -Tctrlw '-' split-window -v -c '#{pane_current_path}'
+
     ## REPLy stuff
     local replPane=$(getTmuxOption "@ctrlw_repl_pane" '{bottom-right}')
     tmux bind -Tctrlw r select-pane -t "$replPane"

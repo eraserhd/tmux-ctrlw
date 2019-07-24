@@ -12,6 +12,8 @@ Emulate Vim's `C-w` in tmux, making pane navigation really snazzy.
 
 | kbd:[@ctrlw_key] kbd:[0]-kbd:[9]             | Focus the numbered pane in the current window
 | kbd:[@ctrlw_key] kbd:[=]                     | Equalize the pane sizes
+| kbd:[@ctrlw_key] kbd:[|]                     | Split pane vertically
+| kbd:[@ctrlw_key] kbd:[-]                     | Split pane horizontally
 | kbd:[@ctrlw_key] kbd:[h]                     | Focus one pane to the left
 | kbd:[@ctrlw_key] kbd:[j]                     | Focus one pane to the down
 | kbd:[@ctrlw_key] kbd:[k]                     | Focus one pane to the up
