@@ -3,6 +3,10 @@ CHANGELOG
 
 :experimental:
 
+== https://github.com/eraserhd/tmux-ctrlw/compare/v0.1.0...HEAD[Unreleased]
+
+* Set `@ctrlw_active` for use in formats.
+
 == v0.1.0
 
 * Map kbd:[|] and kbd:[-] to split panes.

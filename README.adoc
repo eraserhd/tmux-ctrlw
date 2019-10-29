@@ -41,3 +41,12 @@ Configuration
 `@ctrlw_repl_pane` defaults to `{bottom-right}` but can be set to any tmux pane
 identifier.
 
+`@ctrlw_active`
+---------------
+
+The user option `@ctrlw_active` is set to 1 when tmux-ctrlw becomes active, 0 when it is finished.
+This is useful in formats to highlight pane numbers, for example:
+
+....
+set -g pane-border-format "#[fg=#{?@ctrlw_active,#ff5370,#{?pane_active,#292d3e,#697098}}] #P"
+....
