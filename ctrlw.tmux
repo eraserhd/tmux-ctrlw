@@ -20,7 +20,7 @@ key() {
 }
 
 addCtrlwModeBindings() {
-    key = "select-layout -E"
+    key '=' "select-layout -E"
 
     for (( i = 0; i <= 9; i++ )); do
         key $i "select-pane -t $i"
@@ -39,6 +39,9 @@ addCtrlwModeBindings() {
     local replPane=$(getTmuxOption "@ctrlw_repl_pane" '{bottom-right}')
     key r "select-pane -t '$replPane'"
     key , "send-keys -t '$replPane' C-p Enter"
+
+    # To reset @ctrlw_active
+    key Any ''
 }
 
 addCtrlwSwapMode() {
@@ -54,6 +57,9 @@ addCtrlwSwapMode() {
     tmux bind -Tctrlw-swap p '\
         set-option -g @ctrlw_active 0 ;\
         swap-pane -t "!"
+    '
+    tmux bind -Tctrlw-swap Any '\
+        set-option -g @ctrlw_active 0 ;\
     '
 }
 
