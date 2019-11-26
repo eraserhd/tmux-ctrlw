@@ -24,7 +24,7 @@ Emulate Vim's `C-w` in tmux, making pane navigation really snazzy.
 | kbd:[@ctrlw_key] kbd:[r]                     | Focus the REPL or shell pane (`@ctrlw_repl_pane`)
 | kbd:[@ctrlw_key] kbd:[,]                     |
   Repeat last REPL or shell command by sending kbd:[C-p] kbd:[Enter] to `@ctrlw_repl_pane`
-  without changing focus.
+  without changing focus.  An active copy mode will be cancelled first.
 | kbd:[@ctrlw_key] kbd:[.]                     | Send kbd:[@ctrlw_key]
 | kbd:[@ctrlw_key] kbd:[@ctrlw_key]            | Send kbd:[@ctrlw_key]
 | kbd:[@ctrlw_key] unmodified-kbd:[@ctrlw_key] |

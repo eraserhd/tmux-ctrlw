@@ -6,6 +6,7 @@ CHANGELOG
 == https://github.com/eraserhd/tmux-ctrlw/compare/v0.1.0...HEAD[Unreleased]
 
 * Set `@ctrlw_active` for use in formats.
+* kbd:[@ctrlw_key] kbd:[,] will cancel an active copy mode.
 
 == v0.1.0
 

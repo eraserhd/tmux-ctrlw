@@ -38,7 +38,10 @@ addCtrlwModeBindings() {
     ## REPLy stuff
     local replPane=$(getTmuxOption "@ctrlw_repl_pane" '{bottom-right}')
     key r "select-pane -t '$replPane'"
-    key , "send-keys -t '$replPane' C-p Enter"
+    key , '\
+        send-keys -t "'"$replPane"'" -X cancel ;\
+        send-keys -t "'"$replPane"'" C-p Enter ;\
+    '
 
     # To reset @ctrlw_active
     key Any ''
