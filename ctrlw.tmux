@@ -39,7 +39,9 @@ addCtrlwModeBindings() {
     local replPane=$(getTmuxOption "@ctrlw_repl_pane" '{bottom-right}')
     key r "select-pane -t '$replPane'"
     key , '\
-        send-keys -t "'"$replPane"'" -X cancel ;\
+        if-shell -F "#{pane_in_mode}" "\
+            send-keys -t '"$replPane"' -X cancel ;\
+        " ;\
         send-keys -t "'"$replPane"'" C-p Enter ;\
     '
 
