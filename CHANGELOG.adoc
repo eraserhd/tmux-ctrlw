@@ -3,11 +3,16 @@ CHANGELOG
 
 :experimental:
 
-== https://github.com/eraserhd/tmux-ctrlw/compare/v0.1.0...HEAD[Unreleased]
+https://github.com/eraserhd/tmux-ctrlw/compare/v0.1.1...HEAD[Unreleased]
+------------------------------------------------------------------------
+
+https://github.com/eraserhd/tmux-ctrlw/compare/v0.1.0...v0.1.1[v0.1.1]
+----------------------------------------------------------------------
 
 * Set `@ctrlw_active` for use in formats.
 * kbd:[@ctrlw_key] kbd:[,] will cancel an active copy mode.
 
-== v0.1.0
+v0.1.0
+------
 
 * Map kbd:[|] and kbd:[-] to split panes.
